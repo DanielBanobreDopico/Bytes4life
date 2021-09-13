@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Seguridad informática y firma digital</title>
 </head>
 <body>
 
@@ -24,17 +24,17 @@
     <p>Medidas a aplicar</p>
 
     <ul>
-        <li>Destinadas a preservar:
+        <li>Destinadas a preservar los diferentes aspectos de la seguridad:
             <ul>
-                <li>Confidencialidad.</li>
-                <li>Integridad.</li>
-                <li>Confidencialidad.</li>
+                <li><strong>Confidencialidad</strong>: sólo las personas autorizadas han de acceder a datos y servicios.</li>
+                <li><strong>Integridad</strong>: la información a de estar protegida de su destrucción o alteración indebida.</li>
+                <li><strong>Disponibilidad</strong>: los servicios e información han de estar disponibles en el momento en que se necesitan.</li>
             </ul>
         </li>
         <li>Atendiendo a "actuar" y "detectar":
             <ul>
-                <li>Activas</li>
-                <li>Pasivas</li>
+                <li><strong>Activas</strong>: minimizan o reparan el impacto de los eventos que pudieran afectar a los aspectos de la seguridad.</li>
+                <li><strong>Pasivas</strong>: detectan y señalan indicios de que se pudieran estar produciendo eventos que afectan a la seguridad.</li>
             </ul>
         </li>
         <li>Pensando en gestión de riesgos y pensando en lo peor, considerando la necesidad de <strong>recuperar</strong> cualquier desastre.</li>
@@ -44,19 +44,20 @@
 
     <h3>Ejemplos de tecnologías de seguridad basadas en cifrado de clave pública:</h3>
     
-    <p>Los sistemas de firma digital se basan en el cifrado de clave pública.</p>
-    <p>En la seguridad informática el cifrado se clave pública me emplea en múltiples aspectos relativos a la seguridad:</p>
+    <p>Los sistemas de firma digital son una especialidad de la firma electrónica y se basan en el cifrado de clave pública.</p>
+    <p>En la seguridad informática, la criptografía y el cifrado se clave pública me emplea en múltiples aspectos relativos a la seguridad:</p>
     <ul>
-        <li>Privacidad: autenticación, validación de la identidad.</li>
-        <li>No repudio: autenticación, firma. Prueba de responsabilidad.</li>
+        <li>Autenticación: validación de la identidad.</li>
+        <li>No repudio: trazabilidad.</li>
         <li>Integridad: resumen digital, hash. Es la base de la firma digital, sin incluir todos sus elementos.</li>
         <li>Cifrado: privacidad. Forma parte de la firma digital.</li>
     </ul>
-
+    <p>Alguna tecnologías deribadas de la aplicación de la criptografía de clave pública son:</p>
     <ul>
-        <li>SET</li>
-        <li>GPG</li>
-        <li>SSL</li>
+        <li>SET: sistema basado en firma digital para la realización segura y privada de pago electrónico.</li>
+        <li>X.509 (certificados digitales): estandar de gestión de criptografía pública para la comunicación segura regulada por una autoridad central.</li>
+        <li>GPG: solución de criptografía para comunicaciones públicas sin necesidad de intermediarios.</li>
+        <li>SSL/TLS: aplicación de X.509 a la autenticación y cifrado en comunicaciones con dispositivos en red o Internet.</li>
     </ul>
 
 
@@ -69,10 +70,16 @@
     Firma electrónica:
 
     <ul>
-        <li>Simple</li>
-        <li>Avanzada</li>
-        <li>Cualificada</li>
+        <li>Simple: no vincula el origen de la firma. Aceptar cookies.</li>
+        <li>Avanzada: se vincula el documento con la identidad del firmante por medios esclusivos del mismo. Recogida de paquete firmada en tablet.</li>
+        <li>Cualificada: similar a la avanzada, pero se realiza mediante un certificado electrónico emitido por una proveedor autorizado que emplea hardware criptográfico reconocido. eDNI USB criptográfico, HSMs</li>
     </ul>
+
+    <p>La firma digital es una firma simple, avanzada o cualificada que se realiza mediante sistemas de criptografía de clave pública. GPG o certificado digital por ejemplo.</p>
+
+    <p>Firma electrónica es un término administrativo o jurídico, mientras que firma digital es un término tecnológico.</p>
+
+    <p>La firma digital será simple, avanzada o cualificada dependiendo de los requisitos que cumpla.</p>
 
     <h3 id="certificados">Certificados digitales</h3>
 
