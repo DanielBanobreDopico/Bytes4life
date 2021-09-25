@@ -17,7 +17,55 @@
         <li>Instalación certificados en el servidor web: <a href="https://www.bitvise.com/ssh-client-download" target="_blank" rel="noopener noreferrer">Bitvise SSH Client</a></li>
     </ul>
 
-    <h2>Certificados emitidos</h2>
+    <h2>Prácticas</h2>
+
+    <h3 id="emision_certificados">Emisión de certificados</h3>
+
+    <p>En esta práctica exploramos los elementos y pasos básicos a nivel tecnológico para la emisión de un certificado digital.</p>
+
+    <p>Tenemos varios procesos paralelos:</p>
+    <ul>
+        <li>La persona encargada de emitir los certificados crea la llave privada de la autoridad certificadora y su certificado raíz autofirmado.</li>
+        <li>Cada vez que la autoridad certificadora recibe una solicitud de firma, verifica la identidad y legitimidad de la solicitud y emite el certificado si corresponde.</li>
+        <li>Por otra parte, el usuario final genera su propia clave privada. Asociada a la misma crea una solicitud de firma que hace llegar a la autoridad certificadora.</li>
+        <li>Una vez satisfechas las comprobaciones exigidas por la autoridad certificadora, el usuario recibe el certificado emitido por la misma.</li>
+    </ul>
+
+    <p>Proceso de la autoridad certificadora</p>
+
+    <table>
+        <tr>
+            <td>Creación del almacen de llaves</td>
+            <td>
+                <video controls>
+                    <source src="/videos/crear_llavero.webm">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td>Creación de la llave privada y el certificado raiz.</td>
+            <td>
+                <video controls>
+                    <source src="/videos/crear_ac.webm">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td>Emisión del certificado</td>
+            <td>
+                <video controls>
+                    <source src="/videos/emitir_certificado.webm">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <h4>Certificados emitidos</h4>
     <ul>
         <li><a href="./Daniel_CA.crt" target="_blank" rel="noopener noreferrer">Certificado raiz Daniel CA</a></li>
         <li><a href="./Daniel.crt" target="_blank" rel="noopener noreferrer">Daniel</a></li>
@@ -25,5 +73,17 @@
         <li><a href="./Juanjo.crt" target="_blank" rel="noopener noreferrer">Juanjo</a></li>
         <li><a href="./Rocio.crt" target="_blank" rel="noopener noreferrer">Rocio</a></li>
     </ul>
+
+    <h3 id="creacion_cuenta_usuario_windows">Creación de cuentas de usuario</h3>
+    <table>
+        <tr>
+            <td>
+                <p>Las cuentas de usuarios en nuestros ordenadores nos permiten separar la información de diferentes ámbitos de uso: profesional, personal, etc. o de diferentes usuarios del ordenador</p>
+                <p>Esto redunda en una reducción del impacto de los problemas de seguridad informática, aumentando las posibilidades de que determinado problema afecte sólo a un ámbito de uso sin alcanzar a otros.</p>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <video src="/videos/creacion_cuentas_usuario.webm" controls></video>
 </body>
 </html>

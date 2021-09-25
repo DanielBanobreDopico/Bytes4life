@@ -39,25 +39,107 @@
     </ul>
 
     <h2>Sesión 2 - 20 de septiembre</h2>
-
     <ul>
-        <li>Introducimos los conceptos de cifrado:</li>
+        <li>Empezamos a introducir conceptos relacionados con los certificados digitales como fuentes de firma electrónica.</li>
+        <li>Hacemos un pequeño recorrido por las tecnoligías básicas de criptografía, que constituyen las bases de la firma digital:</li>
         <ul>
-            <li>Llaves o claves.</li>
-            <li>Simétrico.</li>
-            <li>Asimétrico o criptografía de clave pública.</li>
+            <li>Cifrado simétrico</li>
+            <li>Cifrado asimétrico</li>
+            <ul>
+                <li>Clave privada y pública</li>
+            </ul>
+            <li>Exploramos por encima las <a href="https://www.youtube.com/watch?v=zxMNNwvhj94" target="_blank" rel="noopener noreferrer">báses matemáticas de RSA</a> como ejemplo de cifrado asimétrico.</li>
         </ul>
-        <li>Presentamos los elementos básicos en la emisión de un certificado:</li>
+        <li>Instalamos XCA como herramienta para la emisión y gestión de certificados digitales.</li>
+        <li>Exploramos los conceptos básicos en el proceso tecnológico de emisión de un certificado:</li>
         <ul>
-            <li>Autoridad certificadora en contraposición a PKI.</li>
-            <li>Certificado</li>
-            <li>Certificado raíz.</li>
-            <li>Solicitud de certificado, CSR</li>
+            <li>Solicitud de firma</li>
+            <li>Autoridad certificadora</li>
+            <li>Certificado autofirmado</li>
+            <li>Certificado raiz</li>
+            <li>Certificado de usuario final</li>
         </ul>
-        <li>Realizamos pruebas de emisión de certificados.</li>
-        <li>Discutimos la relación entre los elementos del los certificados y los conceptos de cifrado mencionados.</li>
-        <li>Intentamos aclarar un poco más la diferencia entre firma avanzada y cualificada.</li>
+        <li><a href="../lab/index.html#emision_certificados" target="_blank" rel="noopener noreferrer">Simulamos el proceso de emisión de firma electrónica.</a></li>
     </ul>
 
+    <h2>Sesión 3 - 21 de septiembre</h2>
+    <ul>
+        <li>Empaquetamos en un fichero nuestra clave privada, certificado de usuario final y certificado raíz.</li>
+        <li>Instalamos en Windows 10 los certificados mediante el fichero mencionado en el punto anterior.</li>
+        <li>Exploramos la función del certificado raíz como mecanismo de validación de los certificados de usuario final.</li>
+        <li>Discutimos los riesgos de instalar en nuestros sistemas certificados raíz de autoridades certificadoras no confiables.</li>
+        <li>Introducimos las funcionalidades definitorias de la firma digital:</li>
+        <ul>
+            <li>Verificación de la integridad de la información firmada.</li>
+            <li>No repudio: imposibilidad de negar la autoría de la firma.</li>
+        </ul>
+        <li>Exploramos el concepto de hash o resumen digital como mecanismo de identificación y verificación de integradad empleado en la firma digital</li>
+    </ul>
+
+    <h2>Sesión 4 - 22 de septiembre</h2>
+    <ul>
+        <li>Exploramos la propiedad conmutativa de las llaves en el cifrado asimétrico, tomando RSA como ejemplo.</li>
+        <ul>
+            <li>Ciframos con llave pública -> desciframos con privada</li>
+            <li>Ciframos con privada -> desciframos con pública.</li>
+        </ul>
+        <li>Experimentamos la creación manual de una firma digital empleando tecnologías en crudo:</li>
+        <ul>
+            <li>Calculamos el resumen digital <a href="https://emn178.github.io/online-tools/sha1.html" target="_blank" rel="noopener noreferrer">empleando SHA1</a> para el contenido de un contrato.</li>
+            <li>Firmamos el resumen digital anterior <a href="https://www.devglan.com/online-tools/rsa-encryption-decryption" target="_blank" rel="noopener noreferrer">empleando una clave privada RSA</a>.</li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1QDKFy3BM_Y9_CYxDZQzE7LcFCeUxkVtGeDOQt6wmFNI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Incorporamos en un documento</a> el contenido del contrato, su resumen digital, la clave pública correspondiente a la empleada para cifrar el resumen y el resumen digital tras el cifrado con la llave privada.</li>
+        </ul>
+        <li>Discutimos cómo el empleo de la clave privada para cifrar el resumen del documento nos proporcioina las condiciones de la firma digital:</li>
+        <ul>
+            <li>Sólo el propietario puede cifrar con la llave privada, proporcionando no repudio.</li>
+            <li>El conocimiento de la propiedad de la clave pública nos proporciona identificación del firmante.</li>
+            <li>La correspondencia o no del resumen digital del contrato con el obtenido de la firma, una vez descifrado con la clave pública, nos permite comprobar que si el contenido del contrato se ha alterado desde su firma, proporcionando integridad.</li>
+        </ul>
+        <li>Discutimos las limitaciones del sistema empleado, comparable con la firma proporcionada por sistemas como <a href="https://gnupg.org/" target="_blank" rel="noopener noreferrer">GnuPG</a>:</li>
+        <ul>
+            <li>Necesidad de disponer de acceso a la clave pública del firmante para la verificación de la firma.</li>
+            <li>Necesidad de la verificación manual de la propiedad sobre la clave pública y la identidad del firmante.</li>
+            <li>Imposibilidad de emplear este sistema de firma entre persoas u entidades desconocidas que no cuenten con canales de comunicación fiables preestablecidos.</li>
+        </ul>
+        <li>Resaltamos cómo el sistema de certificados digitales soluciona este problema al añadir un tercero responsable de verificar la identidad de los propietarios de las claves y emitir "certificados" sobre tal extremo.</li>
+        <ul>
+            <li>El firmante utiliza un certificado (clave pública + información personal + firma de la autoridad certificadora) para realizar la firma.</li>
+            <li>En la firma se incluye toda la información del ejemplo anterior y además la información personal incluida en el certificado.</li>
+            <li>También se incorpora en la firma la información necesaria para comprobar la validez del certificado, y por tanto la identidad del firmante según la autoridad certificadora.</li>
+        </ul>
+        <li>Señalamos varias fragilidades del sistema de certificados:</li>
+        <ul>
+            <li>Autoridades certificadoras <a href="https://www.computerworld.com/article/2902492/egyptian-company-says-rogue-google-ssl-certificates-were-a-mistake.html" target="_blank" rel="noopener noreferrer">no confiables</a>.</li>
+            <li>Claves privadas mál protegidas que pueden ser robadas y utilizadas para actuar en nombre del propietario legítimo.</li>
+            <li>Fallos tecnológicos en las aplicaciones o los protocolos de cifrado o <a href="https://unaaldia.hispasec.com/2005/08/utilizar-md5-para-recurrir-las-multas-de-trafico.html" target="_blank" rel="noopener noreferrer">resumen digital</a></li>
+        </ul>
+        <li>Insisto en la conveniencia de aplicar medidas de seguridad en los ordenadores de las personas participantes en el curso a fin de evitar problemas derivados de las prácticas realizadas. Se proponen dos posibilidades:</li>
+        <ul>
+            <li>Creación en los ordenadores de una <a href="../lab/index.html#creacion_cuenta_usuario_windows" target="_blank" rel="noopener noreferrer">cuenta de usuario</a> para el seguimiento del curso.</li>
+            <li>Empleo de <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">máquinas virtuales</a>.</li>
+        </ul>
+    </ul>
+
+    <h2>Sesión 5 - 23 de septiembre</h2>
+    <ul>
+        <li>Con la escusa de la necesidad de aplicar seguridad, exploramos aspectos básicos de seguridad informática:</li>
+        <ul>
+            <li>Concepto de proporcionalidad, relatividad e importancia de la percepción de peligro.</li>
+            <li><a href="../lab/index.html#creacion_cuenta_usuario_windows" target="_blank" rel="noopener noreferrer">Cuentas de usuario de Windows</a> como mecanismo para aislar actividades de diferentes ámbitos personales o de diferentes personas.</li>
+            <li>Las características de las contraseñas como mecanismo de seguridad.</li>
+            <li>La importancia del uso racional de los servicios on-line.</li>
+            <li>Herramientas para reforzar la seguridad de las contraseñas.</li>
+        </ul>
+        <li>A lo largo de la sesión exploramos varias herramientas:</li>
+        <ul>
+            <li>La <a href="https://password.kaspersky.com/es/" target="_blank" rel="noopener noreferrer">herramienta de Karspersky</a> para comprobar la seguridad de las contraseña.</li>
+            <li>El proyecto <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer">have i been pwned?</a>que nos permite comprobar las filtraciones de datos conocidas que afectan a nuestras cuentas online y suscribirnos para recibir alertas.</li>
+            <li>Las <a href="https://temp-mail.org/es/" target="_blank" rel="noopener noreferrer">direcciones de correo desechables</a> que podemos emplear (con riesgos considerables) cuando no queremos proporcionar información personal para probar servicios online.</li>
+            <li>La existencia de <a href="https://www.adslzone.net/listas/mejores-apps/autenticacion-dos-factores-2FA/" target="_blank" rel="noopener noreferrer">mecanismos de "segundo factor de autenticación (2fA)"</a> que añaden una segunda barrera de protección tras el uso de la contraseña.</li>
+            <li>La existencia de <a href="https://kinsta.com/es/blog/administradores-contrasenas/" target="_blank" rel="noopener noreferrer">aplicaciones</a> que nos ayudan a gestionar correcta y cómodamente nuestras contraseñas.</li>
+            <li>La disponibilidad de <a href="https://tienda.fnmt.es/fnmttv/fnmt/es/Productos/Tarjetas-y-Lectores/c/6000" target="_blank" rel="noopener noreferrer">dispositivos electrónicos</a> que generan y almacenan de forma segura nuestras las claves privadas asociadas a nuestros certificados.</li>
+        </ul>
+        <li>Ponemos como "tarea" buscar las cuentas online que hemos creado en el pasado y que en realidad no usamos para darlas de baja. Un buen sitio donde encontrar información sobre ellas es en la bandeja de spam de nuestros correos.</li>
+    </ul>
 </body>
 </html>
