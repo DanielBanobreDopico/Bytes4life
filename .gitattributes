@@ -1,1 +1,6 @@
 videos/ filter=lfs diff=lfs merge=lfs -text
+videos/creacion_cuentas_usuario.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/encryption.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/firma_manual.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/hash.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/* filter=lfs diff=lfs merge=lfs -text
