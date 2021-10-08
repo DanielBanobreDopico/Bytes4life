@@ -177,8 +177,93 @@
         <li>Comprobamos que podemos acumular firmas sobre un documento.</li>
         <li>Exploramos la metodología y precauciones a la hora de añadir nuevas autoridades certificadoras de confianza a nuestros sistemas informáticos.</li>
         <li>Iniciamos la exploración de la aplicación de los certificados digitales a las páginas web.</li>
+        <ul>
+            <li>DVC: certificados verificados a nivel de dominio, que aportan seguridad a la transmisión de información entre nuestro ordenador y el sitio web. Ejemplo: <a href="http://www.google.com" target="_blank" rel="noopener noreferrer">Google</a></li>
+            <li>OVC: certificados validados a nivel de organización, expedidos por autoridades certificadoras especialmente autorizadas y que, además de la seguridad en la transmisión de datos, aporta garantías sobre la entidad que se encuentra tras el sitio web. Ejemplo: <a href="https://xunta.gal" target="_blank" rel="noopener noreferrer">Xunta de Galicia</a></li>
+            <li>Certificados emitidos para múltiples dominios y certificados "comodín".</li>
+            <li>Importancia de que el certificado esté emitido por una autoridad reconocida.</li>
+        </ul>
         <li>Preparamos el las herramientas para poder acceder al laboratorio de HTTPS</li>
         <li>Hacemos una exploración inicial del laboratorio.</li>
+    </ul>
+
+    <h2>Sesione 9 - 30 de septiembre</h2>
+    <ul>
+        <li>Accedemos al laboratorio. Modificamos el contenido de las páginas web.</li>
+        <li>Exploramos los certificados autofirmado existentes en el laboratorio.</li>
+        <li>Generamos las claves privadas para los sitios web del laboratorio y realizamos la solicitud de certificados para nuestas páginas web, empleando el campo commonName para indicar el dominio de nuestra web.</li>
+        <li>Iniciamos la instalación de los nuevas claves privadas y certificados en las web del laboratorio.</li>
+    </ul>
+
+    <h2>Sesion 10 - 4 de octubre</h2>
+    <ul>
+        <li>Continuamos con la instalación de las nuevas  claves privadas y certificados en las web del laboratorio.</li>
+        <li>Retomamos el concepto de firma electrónica y su relación con los conceptos de seguridad informática de identidad y autenticación de la identidad.</li>
+        <li>Exploramos mecanismos comunes en la actualidad para la auteticación:</li>
+        <ul>
+            <li>contraseñas</li>
+            <li>Contraseñas de uso único (OTP) recibidas por SMS o e-mail</li>
+            <li>Contraseñas de uso único generadas por aplicaciones en base a clave secreta y tiempo o clave secreta y número de usos.</li>
+            <li>Sistemas de autenticación biométricos.</li>
+        </ul>
+        <li>Exploramos el caso de DocuSign como proveedor de solución de firma electrónica avanzada on-line.</li>
+        <li>Discutimos sobre el trazado de perfiles biométricos como forma de recopilar pruebas periciales contra el repudio de la firma y como una de las posibles formas de conseguir una firma electrónica avanzada.</li>
+        <li>Señalamos los riesgos para la privacidad de este tipo de perfiles biométricos.</li>
+        <li>Exploramos las opciones de privacidad y seguridad la configuración de las cuentas de Google como ejemplos de mecanismos de obtención de perfiles personales y sistemas de autentcación.</li>
+    </ul>
+
+    <h2>Sesión 11 - 5 de octubre</h2>
+    <ul>
+        <li>Exponemos las debilidades históricas del correo electrónico en cuanto a seguridad.</li>
+        <li>Presentamos los sistemas de firma digital y cifrado en el correo electrónico como remedios a las debilidades expuestas previamente.</li>
+        <li>Presentamos PGP/OpenGPG/GPG y S/MIME como alternativas estandar de firma digital y cifrado para e-mail.</li>
+        <li>Delimitamos los casos de uso:</li>
+        <ul>
+            <li>PGP/GPG que no necesita de autoridades certificadoras para uso interno entre grupos de personas que se conocen entre si o cuentan con canales seguros de comunicación, necesarios para la verificación mutua de las claves de firma/cifrado.</li>
+            <li>S/MIME que emplea certificados digitales para los casos en los que los interlocutores no se conocen entre si y carencen de canales seguros de comunicación, delegando la verificación de las claves en una autoridad certificadora de confianza.</li>
+        </ul>
+    </ul>
+
+    <h2>Sesión 12 - 6 de octubre</h2>
+    <ul>
+        <li>Exploramos provehedores de e-mail orientados a la privacidad:</li>
+        <ul>
+            <li>Dis:root</li>
+            <li>Tutanota</li>
+            <li>ProtonMail</li>
+        </ul>
+        <li>Creamos una cuenta de ProtonMail, evitando proporcionar información personal, para explorar de forma sencilla PGP/GPG.</li>
+        <li>Exploramos las cuentas de ProtonMail, probando las funcionalidades de segundo factor de autenticación (2FA) y el empleo de claves GPG para firma y cifrado de e-mail.</li>
+    </ul>
+
+    <h2>Sesion 13 - 7 de octubre</h2>
+    <ul>
+        <li>Exploramos S/MIME como opción para la firma electrónica generalizada.</li>
+        <li>Exponemos las limitaciones en este sentido de los provehedores de correo electrónico comunes.</li>
+        <ul>
+            <li>Google sólo permite emplear S/MIME activamente desde cuentas corporativas administradas.</li>
+            <li>Microsoft sólo desde cuentas de correo de su red y sólo empleando su cliente Windows Correo en plataformas Windows.</li>
+        </ul>
+        <li>Señalamos los clientes de correo locales, isntalados en nuestro ordenador o teléfono, como alternativa realista para el empleo de S/MIME.</li>
+        <li>Remarcamos la necesidad de que el servicio de correo que empleemos soporte los protocolos IMAP o POP para poder conectar nuestros clientes de correo al servicio.</li>
+        <li>Exploramos el proceso de la puesta en marcha de un entorno de correo para el uso de S/MIME:</li>
+        <ul>
+            <li>Realizamos la configuración de una cuenta de Gmail como ejemplo para activar el servicio IMAP.</li>
+            <li>Instalamos el cliente de correo Thunderbird como ejemplo de cliente de correo.</li>
+            <li>Concetamos Thunderbird con la cuenta de Gmail. Señalamos el empleo de Oauth y de qué manera se nos informa de los privilegios concedidos a nuestro cliente de correo sonbre la cuenta de Gmail.</li>
+            <li>Creamos a modo ilustrativo una autoridad certificadora con tres autoridades certificadoras delegadas para la emisión de diferentes certificados:</li>
+            <ul>
+                <li>Firma de dodumentos</li>
+                <li>Sitios web</li>
+                <li>Protección de e-mail</li>
+            </ul>
+            <li>Exploramos las configuraciones básicas de un certificado digital para protección de e-mail. Especialmente el uso de los campos específicos para la vinculación del certificado a la dirección de e-mail del usuario final.</li>
+            <li>Emitimos certificados para protección de e-mail.</li>
+            <li>Instalamos la cadena de certificados raiz de la autoridad certificadora en nuestro cliente de correo, estableciendo confianza en la misma para la verificación de identidades de usuarios de correo electrónico.</li>
+            <li>Instalamos en nuestro cliente de correo nuestro certificado de usuario final para la protección del correo electrónico.</li>
+            <li>Probamos a enviar correos electrónicos firmados digitalmente y cifrados.</li>
+            <li>Comprobamos el resultado de la firma y el cifrado para el receptor de dichos correos.</li>
+        </ul>
     </ul>
 </body>
 </html>
